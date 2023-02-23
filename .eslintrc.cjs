@@ -8,6 +8,9 @@ module.exports = {
 	settings: {
 		'svelte3/typescript': () => require('typescript')
 	},
+	globals: {
+		App: true
+	},
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2020
