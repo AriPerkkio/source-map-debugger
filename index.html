@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/source-map-debugger/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="content-security-policy" content="">
+		<link href="/source-map-debugger/internal/immutable/assets/_page.8cb84736.css" rel="stylesheet">
+		<link rel="preload" as="script" crossorigin="anonymous" href="/source-map-debugger/internal/immutable/entry/start.b53a94e3.mjs">
+		<link rel="preload" as="script" crossorigin="anonymous" href="/source-map-debugger/internal/immutable/chunks/index.554d251f.mjs">
+		<link rel="preload" as="script" crossorigin="anonymous" href="/source-map-debugger/internal/immutable/chunks/singletons.6ea4eb4e.mjs">
+		<link rel="preload" as="script" crossorigin="anonymous" href="/source-map-debugger/internal/immutable/entry/app.b6a85619.mjs">
+		<link rel="preload" as="script" crossorigin="anonymous" href="/source-map-debugger/internal/immutable/entry/layout.svelte.cec57dd4.mjs">
+		<link rel="preload" as="script" crossorigin="anonymous" href="/source-map-debugger/internal/immutable/entry/_page.svelte.26bd2f87.mjs">
+		<link rel="preload" as="script" crossorigin="anonymous" href="/source-map-debugger/internal/immutable/entry/_page.ts.3dc38d36.mjs">
+		<link rel="preload" as="script" crossorigin="anonymous" href="/source-map-debugger/internal/immutable/chunks/_page.da46b06b.mjs">
+
+		<style>
+			:root {
+				/*https://github.com/wesbos/cobalt2#official-colours */
+				--yellow: #ffc600;
+				--orange: #ff9d00;
+				--mint: #2affdf;
+				--blue: #193549;
+				--off-blue: #0d3a58;
+				--dusty-blue: #35434d;
+				--dark-blue: #15232d;
+				--pink: #fb94ff;
+				--light-blue: #9effff;
+			}
+			* {
+				box-sizing: border-box;
+				padding: 0;
+				margin: 0;
+			}
+			@font-face {
+				font-family: 'Cascadia Code';
+				src: url('/source-map-debugger/CascadiaCode.ttf');
+			}
+			html {
+				font-family: 'Cascadia Code';
+				font-size: 62.5%;
+			}
+			html,
+			body,
+			#source-map-debugger-root {
+				height: 100%;
+				width: 100%;
+				margin: 0;
+				padding: 0;
+				background-color: var(--off-blue);
+				color: var(--yellow);
+			}
+		</style>
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div id="source-map-debugger-root" style="display: contents">
+
+
+
+
+<div class="grid svelte-duhlzm" style="--gridSize: 25rem; white-space: pre;"><header class="svelte-duhlzm"><h1 class="svelte-duhlzm">Source Map Debugger</h1>
+		<p class="svelte-duhlzm">Debug and modify source maps. Load the example from the top right tools or paste your own
+			source map and generated code into editors.
+		</p></header>
+
+	<div class="tools svelte-duhlzm"><div role="region" aria-label="Tools" class="tools svelte-ph49s2"><div class="flex-center svelte-ph49s2"><span>Github:</span>
+		<a href="https://github.com/ariperkkio/source-map-debugger/" class="svelte-ph49s2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 20 20" aria-hidden="true"><path d="M16.24 22a1 1 0 0 1-1-1v-2.6a2.15 2.15 0 0 0-.54-1.66 1 1 0 0 1 .61-1.67C17.75 14.78 20 14 20 9.77a4 4 0 0 0-.67-2.22 2.75 2.75 0 0 1-.41-2.06 3.71 3.71 0 0 0 0-1.41 7.65 7.65 0 0 0-2.09 1.09 1 1 0 0 1-.84.15 10.15 10.15 0 0 0-5.52 0 1 1 0 0 1-.84-.15 7.4 7.4 0 0 0-2.11-1.09 3.52 3.52 0 0 0 0 1.41 2.84 2.84 0 0 1-.43 2.08 4.07 4.07 0 0 0-.67 2.23c0 3.89 1.88 4.93 4.7 5.29a1 1 0 0 1 .82.66 1 1 0 0 1-.21 1 2.06 2.06 0 0 0-.55 1.56V21a1 1 0 0 1-2 0v-.57a6 6 0 0 1-5.27-2.09 3.9 3.9 0 0 0-1.16-.88 1 1 0 1 1 .5-1.94 4.93 4.93 0 0 1 2 1.36c1 1 2 1.88 3.9 1.52a3.89 3.89 0 0 1 .23-1.58c-2.06-.52-5-2-5-7a6 6 0 0 1 1-3.33.85.85 0 0 0 .13-.62 5.69 5.69 0 0 1 .33-3.21 1 1 0 0 1 .63-.57c.34-.1 1.56-.3 3.87 1.2a12.16 12.16 0 0 1 5.69 0c2.31-1.5 3.53-1.31 3.86-1.2a1 1 0 0 1 .63.57 5.71 5.71 0 0 1 .33 3.22.75.75 0 0 0 .11.57 6 6 0 0 1 1 3.34c0 5.07-2.92 6.54-5 7a4.28 4.28 0 0 1 .22 1.67V21a1 1 0 0 1-.94 1z"></path></svg></a></div>
+
+	<div class="flex-center svelte-ph49s2"><span>Try example:</span>
+		<button title="Load example" class="svelte-ph49s2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 20 20" aria-hidden="true"><path d="M21.66 10.37a.62.62 0 0 0 .07-.19l.75-4a1 1 0 0 0-2-.36l-.37 2a9.22 9.22 0 0 0-16.58.84 1 1 0 0 0 .55 1.3 1 1 0 0 0 1.31-.55A7.08 7.08 0 0 1 12.07 5a7.17 7.17 0 0 1 6.24 3.58l-1.65-.27a1 1 0 1 0-.32 2l4.25.71h.16a.93.93 0 0 0 .34-.06.33.33 0 0 0 .1-.06.78.78 0 0 0 .2-.11l.08-.1a1.07 1.07 0 0 0 .14-.16.58.58 0 0 0 .05-.16zM19.88 14.07a1 1 0 0 0-1.31.56A7.08 7.08 0 0 1 11.93 19a7.17 7.17 0 0 1-6.24-3.58l1.65.27h.16a1 1 0 0 0 .16-2L3.41 13a.91.91 0 0 0-.33 0H3a1.15 1.15 0 0 0-.32.14 1 1 0 0 0-.18.18l-.09.1a.84.84 0 0 0-.07.19.44.44 0 0 0-.07.17l-.75 4a1 1 0 0 0 .8 1.22h.18a1 1 0 0 0 1-.82l.37-2a9.22 9.22 0 0 0 16.58-.83 1 1 0 0 0-.57-1.28z"></path></svg></button></div>
+
+	<div class="svelte-ph49s2"><label for="word-wrap" class="svelte-ph49s2">Word Wrap:
+			<input id="word-wrap" type="checkbox" class="svelte-ph49s2">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 20 20" aria-hidden="true"><path d="M18 3H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3zm1 15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1z"></path><path class="check-mark" d="m14.7 8.39-3.78 5-1.63-2.11a1 1 0 0 0-1.58 1.23l2.43 3.11a1 1 0 0 0 .79.38 1 1 0 0 0 .79-.39l4.57-6a1 1 0 1 0-1.6-1.22z"></path></svg></label></div>
+
+	<div class="flex-center grid-size svelte-ph49s2" role="group" aria-labelledby="grid-size-title"><span id="grid-size-title">Grid size:</span>
+
+		<button title="Increase first row size" class="svelte-ph49s2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 20 20" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path><path d="M15 11h-2V9a1 1 0 0 0-2 0v2H9a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2h2a1 1 0 0 0 0-2z"></path></svg></button>
+
+		<button title="Decrease first row size" class="svelte-ph49s2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 20 20" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path><path d="M15 11H9a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2z"></path></svg></button></div>
+
+	<div class="flex-center svelte-ph49s2" role="group" aria-labelledby="line-offset-title"><span id="line-offset-title">Line Offset:</span>
+
+		<button title="Increase line offset" class="svelte-ph49s2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 20 20" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path><path d="M15 11h-2V9a1 1 0 0 0-2 0v2H9a1 1 0 0 0 0 2h2v2a1 1 0 0 0 2 0v-2h2a1 1 0 0 0 0-2z"></path></svg></button>
+
+		<button title="Decrease line offset" class="svelte-ph49s2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 20 20" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path><path d="M15 11H9a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2z"></path></svg></button></div>
+</div></div>
+
+	<div class="map svelte-duhlzm"><div class="code-area svelte-9tv8ao"><h2 class="svelte-duhlzm">Source Map</h2>
+
+	<code contenteditable="true" spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" role="textbox" aria-multiline="true" aria-autocomplete="list" class="svelte-9tv8ao"><div class="row svelte-9tv8ao" data-line="1" style="--line-count: 1ch">
+						<span data-line="1" data-column="0" title="1:0" class="column svelte-9tv8ao">{</span>
+				</div><div class="row svelte-9tv8ao" data-line="2" style="--line-count: 1ch">
+						<span data-line="2" data-column="0" title="2:0" class="column svelte-9tv8ao"> </span>
+						<span data-line="2" data-column="1" title="2:1" class="column svelte-9tv8ao"> </span>
+						<span data-line="2" data-column="2" title="2:2" class="column svelte-9tv8ao">"</span>
+						<span data-line="2" data-column="3" title="2:3" class="column svelte-9tv8ao">m</span>
+						<span data-line="2" data-column="4" title="2:4" class="column svelte-9tv8ao">a</span>
+						<span data-line="2" data-column="5" title="2:5" class="column svelte-9tv8ao">p</span>
+						<span data-line="2" data-column="6" title="2:6" class="column svelte-9tv8ao">p</span>
+						<span data-line="2" data-column="7" title="2:7" class="column svelte-9tv8ao">i</span>
+						<span data-line="2" data-column="8" title="2:8" class="column svelte-9tv8ao">n</span>
+						<span data-line="2" data-column="9" title="2:9" class="column svelte-9tv8ao">g</span>
+						<span data-line="2" data-column="10" title="2:10" class="column svelte-9tv8ao">s</span>
+						<span data-line="2" data-column="11" title="2:11" class="column svelte-9tv8ao">"</span>
+						<span data-line="2" data-column="12" title="2:12" class="column svelte-9tv8ao">:</span>
+						<span data-line="2" data-column="13" title="2:13" class="column svelte-9tv8ao"> </span>
+						<span data-line="2" data-column="14" title="2:14" class="column svelte-9tv8ao">"</span>
+						<span data-line="2" data-column="15" title="2:15" class="column svelte-9tv8ao">"</span>
+						<span data-line="2" data-column="16" title="2:16" class="column svelte-9tv8ao">,</span>
+				</div><div class="row svelte-9tv8ao" data-line="3" style="--line-count: 1ch">
+						<span data-line="3" data-column="0" title="3:0" class="column svelte-9tv8ao"> </span>
+						<span data-line="3" data-column="1" title="3:1" class="column svelte-9tv8ao"> </span>
+						<span data-line="3" data-column="2" title="3:2" class="column svelte-9tv8ao">"</span>
+						<span data-line="3" data-column="3" title="3:3" class="column svelte-9tv8ao">n</span>
+						<span data-line="3" data-column="4" title="3:4" class="column svelte-9tv8ao">a</span>
+						<span data-line="3" data-column="5" title="3:5" class="column svelte-9tv8ao">m</span>
+						<span data-line="3" data-column="6" title="3:6" class="column svelte-9tv8ao">e</span>
+						<span data-line="3" data-column="7" title="3:7" class="column svelte-9tv8ao">s</span>
+						<span data-line="3" data-column="8" title="3:8" class="column svelte-9tv8ao">"</span>
+						<span data-line="3" data-column="9" title="3:9" class="column svelte-9tv8ao">:</span>
+						<span data-line="3" data-column="10" title="3:10" class="column svelte-9tv8ao"> </span>
+						<span data-line="3" data-column="11" title="3:11" class="column svelte-9tv8ao">[</span>
+						<span data-line="3" data-column="12" title="3:12" class="column svelte-9tv8ao">]</span>
+						<span data-line="3" data-column="13" title="3:13" class="column svelte-9tv8ao">,</span>
+				</div><div class="row svelte-9tv8ao" data-line="4" style="--line-count: 1ch">
+						<span data-line="4" data-column="0" title="4:0" class="column svelte-9tv8ao"> </span>
+						<span data-line="4" data-column="1" title="4:1" class="column svelte-9tv8ao"> </span>
+						<span data-line="4" data-column="2" title="4:2" class="column svelte-9tv8ao">"</span>
+						<span data-line="4" data-column="3" title="4:3" class="column svelte-9tv8ao">s</span>
+						<span data-line="4" data-column="4" title="4:4" class="column svelte-9tv8ao">o</span>
+						<span data-line="4" data-column="5" title="4:5" class="column svelte-9tv8ao">u</span>
+						<span data-line="4" data-column="6" title="4:6" class="column svelte-9tv8ao">r</span>
+						<span data-line="4" data-column="7" title="4:7" class="column svelte-9tv8ao">c</span>
+						<span data-line="4" data-column="8" title="4:8" class="column svelte-9tv8ao">e</span>
+						<span data-line="4" data-column="9" title="4:9" class="column svelte-9tv8ao">s</span>
+						<span data-line="4" data-column="10" title="4:10" class="column svelte-9tv8ao">"</span>
+						<span data-line="4" data-column="11" title="4:11" class="column svelte-9tv8ao">:</span>
+						<span data-line="4" data-column="12" title="4:12" class="column svelte-9tv8ao"> </span>
+						<span data-line="4" data-column="13" title="4:13" class="column svelte-9tv8ao">[</span>
+						<span data-line="4" data-column="14" title="4:14" class="column svelte-9tv8ao">]</span>
+						<span data-line="4" data-column="15" title="4:15" class="column svelte-9tv8ao">,</span>
+				</div><div class="row svelte-9tv8ao" data-line="5" style="--line-count: 1ch">
+						<span data-line="5" data-column="0" title="5:0" class="column svelte-9tv8ao"> </span>
+						<span data-line="5" data-column="1" title="5:1" class="column svelte-9tv8ao"> </span>
+						<span data-line="5" data-column="2" title="5:2" class="column svelte-9tv8ao">"</span>
+						<span data-line="5" data-column="3" title="5:3" class="column svelte-9tv8ao">s</span>
+						<span data-line="5" data-column="4" title="5:4" class="column svelte-9tv8ao">o</span>
+						<span data-line="5" data-column="5" title="5:5" class="column svelte-9tv8ao">u</span>
+						<span data-line="5" data-column="6" title="5:6" class="column svelte-9tv8ao">r</span>
+						<span data-line="5" data-column="7" title="5:7" class="column svelte-9tv8ao">c</span>
+						<span data-line="5" data-column="8" title="5:8" class="column svelte-9tv8ao">e</span>
+						<span data-line="5" data-column="9" title="5:9" class="column svelte-9tv8ao">s</span>
+						<span data-line="5" data-column="10" title="5:10" class="column svelte-9tv8ao">C</span>
+						<span data-line="5" data-column="11" title="5:11" class="column svelte-9tv8ao">o</span>
+						<span data-line="5" data-column="12" title="5:12" class="column svelte-9tv8ao">n</span>
+						<span data-line="5" data-column="13" title="5:13" class="column svelte-9tv8ao">t</span>
+						<span data-line="5" data-column="14" title="5:14" class="column svelte-9tv8ao">e</span>
+						<span data-line="5" data-column="15" title="5:15" class="column svelte-9tv8ao">n</span>
+						<span data-line="5" data-column="16" title="5:16" class="column svelte-9tv8ao">t</span>
+						<span data-line="5" data-column="17" title="5:17" class="column svelte-9tv8ao">"</span>
+						<span data-line="5" data-column="18" title="5:18" class="column svelte-9tv8ao">:</span>
+						<span data-line="5" data-column="19" title="5:19" class="column svelte-9tv8ao"> </span>
+						<span data-line="5" data-column="20" title="5:20" class="column svelte-9tv8ao">[</span>
+						<span data-line="5" data-column="21" title="5:21" class="column svelte-9tv8ao">]</span>
+						<span data-line="5" data-column="22" title="5:22" class="column svelte-9tv8ao">,</span>
+				</div><div class="row svelte-9tv8ao" data-line="6" style="--line-count: 1ch">
+						<span data-line="6" data-column="0" title="6:0" class="column svelte-9tv8ao"> </span>
+						<span data-line="6" data-column="1" title="6:1" class="column svelte-9tv8ao"> </span>
+						<span data-line="6" data-column="2" title="6:2" class="column svelte-9tv8ao">"</span>
+						<span data-line="6" data-column="3" title="6:3" class="column svelte-9tv8ao">v</span>
+						<span data-line="6" data-column="4" title="6:4" class="column svelte-9tv8ao">e</span>
+						<span data-line="6" data-column="5" title="6:5" class="column svelte-9tv8ao">r</span>
+						<span data-line="6" data-column="6" title="6:6" class="column svelte-9tv8ao">s</span>
+						<span data-line="6" data-column="7" title="6:7" class="column svelte-9tv8ao">i</span>
+						<span data-line="6" data-column="8" title="6:8" class="column svelte-9tv8ao">o</span>
+						<span data-line="6" data-column="9" title="6:9" class="column svelte-9tv8ao">n</span>
+						<span data-line="6" data-column="10" title="6:10" class="column svelte-9tv8ao">"</span>
+						<span data-line="6" data-column="11" title="6:11" class="column svelte-9tv8ao">:</span>
+						<span data-line="6" data-column="12" title="6:12" class="column svelte-9tv8ao"> </span>
+						<span data-line="6" data-column="13" title="6:13" class="column svelte-9tv8ao">3</span>
+				</div><div class="row svelte-9tv8ao" data-line="7" style="--line-count: 1ch">
+						<span data-line="7" data-column="0" title="7:0" class="column svelte-9tv8ao">}</span>
+				</div></code>
+</div></div>
+
+	<div class="mappings svelte-duhlzm"><div class="code-area svelte-9tv8ao"><h2 class="svelte-duhlzm">Mappings</h2>
+
+	<code contenteditable="true" spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" role="textbox" aria-multiline="true" aria-autocomplete="list" class="svelte-9tv8ao"><div class="row svelte-9tv8ao" data-line="1" style="--line-count: 1ch">
+						<span data-line="1" data-column="0" title="1:0" class="column svelte-9tv8ao">[</span>
+						<span data-line="1" data-column="1" title="1:1" class="column svelte-9tv8ao"> </span>
+						<span data-line="1" data-column="2" title="1:2" class="column svelte-9tv8ao">[</span>
+						<span data-line="1" data-column="3" title="1:3" class="column svelte-9tv8ao">]</span>
+						<span data-line="1" data-column="4" title="1:4" class="column svelte-9tv8ao"> </span>
+						<span data-line="1" data-column="5" title="1:5" class="column svelte-9tv8ao">]</span>
+				</div></code>
+</div></div>
+
+	<div class="sources svelte-duhlzm"><div class="code-area svelte-9tv8ao"><h2 class="svelte-duhlzm">Sources</h2>
+
+	<code contenteditable="false" spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" role="textbox" aria-multiline="true" aria-autocomplete="list" class="svelte-9tv8ao"><div class="row svelte-9tv8ao" data-line="1" style="--line-count: 1ch">
+						<span data-line="1" data-column="0" title="1:0" class="column svelte-9tv8ao">N</span>
+						<span data-line="1" data-column="1" title="1:1" class="column svelte-9tv8ao">o</span>
+						<span data-line="1" data-column="2" title="1:2" class="column svelte-9tv8ao"> </span>
+						<span data-line="1" data-column="3" title="1:3" class="column svelte-9tv8ao">s</span>
+						<span data-line="1" data-column="4" title="1:4" class="column svelte-9tv8ao">o</span>
+						<span data-line="1" data-column="5" title="1:5" class="column svelte-9tv8ao">u</span>
+						<span data-line="1" data-column="6" title="1:6" class="column svelte-9tv8ao">r</span>
+						<span data-line="1" data-column="7" title="1:7" class="column svelte-9tv8ao">c</span>
+						<span data-line="1" data-column="8" title="1:8" class="column svelte-9tv8ao">e</span>
+						<span data-line="1" data-column="9" title="1:9" class="column svelte-9tv8ao">s</span>
+				</div></code>
+</div></div>
+
+	<div class="generated svelte-duhlzm"><div class="code-area svelte-9tv8ao"><h2 class="svelte-duhlzm">Generated</h2>
+
+	<code contenteditable="true" spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" role="textbox" aria-multiline="true" aria-autocomplete="list" class="svelte-9tv8ao"><div class="row svelte-9tv8ao" data-line="1" style="--line-count: 1ch">
+						<span data-line="1" data-column="0" title="1:0" class="column svelte-9tv8ao">&lt;</span>
+						<span data-line="1" data-column="1" title="1:1" class="column svelte-9tv8ao">P</span>
+						<span data-line="1" data-column="2" title="1:2" class="column svelte-9tv8ao">a</span>
+						<span data-line="1" data-column="3" title="1:3" class="column svelte-9tv8ao">s</span>
+						<span data-line="1" data-column="4" title="1:4" class="column svelte-9tv8ao">t</span>
+						<span data-line="1" data-column="5" title="1:5" class="column svelte-9tv8ao">e</span>
+						<span data-line="1" data-column="6" title="1:6" class="column svelte-9tv8ao"> </span>
+						<span data-line="1" data-column="7" title="1:7" class="column svelte-9tv8ao">y</span>
+						<span data-line="1" data-column="8" title="1:8" class="column svelte-9tv8ao">o</span>
+						<span data-line="1" data-column="9" title="1:9" class="column svelte-9tv8ao">u</span>
+						<span data-line="1" data-column="10" title="1:10" class="column svelte-9tv8ao">r</span>
+						<span data-line="1" data-column="11" title="1:11" class="column svelte-9tv8ao"> </span>
+						<span data-line="1" data-column="12" title="1:12" class="column svelte-9tv8ao">g</span>
+						<span data-line="1" data-column="13" title="1:13" class="column svelte-9tv8ao">e</span>
+						<span data-line="1" data-column="14" title="1:14" class="column svelte-9tv8ao">n</span>
+						<span data-line="1" data-column="15" title="1:15" class="column svelte-9tv8ao">e</span>
+						<span data-line="1" data-column="16" title="1:16" class="column svelte-9tv8ao">r</span>
+						<span data-line="1" data-column="17" title="1:17" class="column svelte-9tv8ao">a</span>
+						<span data-line="1" data-column="18" title="1:18" class="column svelte-9tv8ao">t</span>
+						<span data-line="1" data-column="19" title="1:19" class="column svelte-9tv8ao">e</span>
+						<span data-line="1" data-column="20" title="1:20" class="column svelte-9tv8ao">d</span>
+						<span data-line="1" data-column="21" title="1:21" class="column svelte-9tv8ao"> </span>
+						<span data-line="1" data-column="22" title="1:22" class="column svelte-9tv8ao">c</span>
+						<span data-line="1" data-column="23" title="1:23" class="column svelte-9tv8ao">o</span>
+						<span data-line="1" data-column="24" title="1:24" class="column svelte-9tv8ao">d</span>
+						<span data-line="1" data-column="25" title="1:25" class="column svelte-9tv8ao">e</span>
+						<span data-line="1" data-column="26" title="1:26" class="column svelte-9tv8ao"> </span>
+						<span data-line="1" data-column="27" title="1:27" class="column svelte-9tv8ao">h</span>
+						<span data-line="1" data-column="28" title="1:28" class="column svelte-9tv8ao">e</span>
+						<span data-line="1" data-column="29" title="1:29" class="column svelte-9tv8ao">r</span>
+						<span data-line="1" data-column="30" title="1:30" class="column svelte-9tv8ao">e</span>
+						<span data-line="1" data-column="31" title="1:31" class="column svelte-9tv8ao">></span>
+				</div></code>
+</div></div>
+</div>
+
+
+			
+			<script>
+				{
+					__sveltekit_hckqgr = {
+						env: {},
+						assets: "/source-map-debugger",
+						element: document.currentScript.parentElement
+					};
+
+					const data = [null,null];
+
+					Promise.all([
+						import("/source-map-debugger/internal/immutable/entry/start.b53a94e3.mjs"),
+						import("/source-map-debugger/internal/immutable/entry/app.b6a85619.mjs")
+					]).then(([kit, app]) => {
+						kit.start(app, __sveltekit_hckqgr.element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
