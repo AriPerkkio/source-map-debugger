@@ -209,7 +209,7 @@
 
 		// Last row
 		&:not(:has(+ .selected)) {
-			@include border(('bottom'));
+			@include border('bottom');
 		}
 	}
 
