@@ -59,7 +59,7 @@
 	$: focused = false;
 	$: reset = false; // Helps Svelte's compatibility with contenteditable
 
-	$: if (!focused) {
+	$: if (!focused && controlledValue !== value) {
 		reset = !reset;
 		controlledValue = value;
 	}
