@@ -5,7 +5,9 @@
 	import Minus from '$lib/img/minus.svg?component';
 	import Checked from '$lib/img/checked.svg?component';
 	import Reload from '$lib/img/reload.svg?component';
+	import Share from '$lib/img/share.svg?component';
 	import Github from '$lib/img/github.svg?component';
+	import { buildStatefulUrl } from '$lib/urlSearchParameters.svelte';
 	import { testSourceMap, testGenerated } from '$lib/static-data';
 
 	function addOffset(offset: number) {
@@ -26,6 +28,7 @@
 	export let generated: string;
 	export let wordWrap: boolean;
 	export let gridSize: number;
+	let exportUrl: string | undefined = '';
 
 	function onLineOffsetChange(offset: 1 | -1) {
 		const mappingsWithOffset = decode(map.mappings).map((mapping) =>
@@ -40,9 +43,24 @@
 
 		map.mappings = encode(mappingsWithOffset);
 	}
+
+	function onShare() {
+		const url = buildStatefulUrl({ generated, map });
+
+		// Update window's URL with export URL
+		window.history.pushState({}, '', url);
+		exportUrl = url.toString();
+
+		navigator.clipboard.writeText(exportUrl).then(() => {
+			// Removes "Copied" text from screen after a delay
+			setTimeout(() => {
+				exportUrl = '';
+			}, 3000);
+		});
+	}
 </script>
 
-<div role="region" aria-label="Tools" class="tools">
+<div role="region" aria-label="Tools" class="tools" class:dim={exportUrl}>
 	<div class="flex-center">
 		<span>Github:</span>
 		<a href="https://github.com/ariperkkio/source-map-debugger/">
@@ -58,6 +76,19 @@
 		>
 			<Reload aria-hidden="true" />
 		</button>
+	</div>
+
+	<div class="flex-center url-share">
+		<span>Share URL:</span>
+		<button title="Generate URL of current state" on:click={onShare}>
+			<Share aria-hidden="true" />
+		</button>
+
+		<div aria-live="polite">
+			{#if exportUrl}
+				<div class="url-share-popup">URL copied to clipboard!</div>
+			{/if}
+		</div>
 	</div>
 
 	<div>
@@ -103,6 +134,13 @@
 		white-space: normal;
 		font-size: 1.5rem;
 
+		&.dim :global(*:not(.url-share-popup)) {
+			color: var(--yellow-dim);
+			fill: var(--yellow-dim);
+			border: 0;
+			outline: 0;
+		}
+
 		& > *:not(:last-child) {
 			margin-bottom: 0.5rem;
 		}
@@ -147,6 +185,20 @@
 
 		:global(svg) {
 			margin-left: 0.75rem;
+		}
+	}
+
+	.url-share {
+		position: relative;
+
+		&-popup {
+			position: absolute;
+			top: 2rem;
+			left: -1rem;
+			border: 0.2rem dashed var(--yellow);
+			padding: 0.5rem 1rem;
+			color: var(--yellow);
+			background-color: var(--off-blue);
 		}
 	}
 

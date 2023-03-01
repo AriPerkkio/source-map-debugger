@@ -4,6 +4,7 @@
 	import CodeArea, { type PositionSelectEvent } from '$lib/CodeArea';
 	import Tools from './Tools.svelte';
 	import { decodedMappingsToLocations, findLocations, type Locations } from '$lib/source-map-utils';
+	import { initializeFromUrlSearchParams } from '$lib/urlSearchParameters.svelte';
 
 	interface SelectedPosition extends PositionSelectEvent {
 		type: keyof Locations[number];
@@ -11,14 +12,7 @@
 </script>
 
 <script lang="ts">
-	$: map = {
-		mappings: '',
-		names: [],
-		sources: [],
-		sourcesContent: [],
-		version: 3
-	} as App.SourceMap;
-	$: generated = '<Paste your generated code here>';
+	let { map, generated } = initializeFromUrlSearchParams();
 
 	$: decodedMappings = decode(map.mappings);
 	$: locations = decodedMappingsToLocations(decodedMappings);
@@ -79,6 +73,7 @@
 		<CodeArea
 			contenteditable
 			value={generated}
+			on:change={(event) => (generated = event.detail)}
 			highlightLocations={locations.map((location) => location.generated)}
 			selectedLocations={selectedLocations.map((location) => location.generated)}
 			on:position-select={(event) => (selectedPosition = { type: 'generated', ...event.detail })}
